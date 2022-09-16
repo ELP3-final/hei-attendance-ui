@@ -3,12 +3,10 @@ import {
   ChakraProvider,
   theme,
 } from "@chakra-ui/react"
-import { Layout } from "./components/Layout"
+import { Auth } from './pages/auth';
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Layout>
-
-    </Layout>
-  </ChakraProvider>
+    <Auth />
+  </ChakraProvider >
 );

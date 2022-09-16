@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
 
-export type WithChildren<T = unknown> = {
+export type Wrapper<T = unknown> = {
   children?: ReactNode;
 } & T;

@@ -1,16 +1,16 @@
 import { useColorModeValue, Flex, CloseButton, Text, Box } from '@chakra-ui/react';
+import { SidebarProps } from '../../types/props/layout';
 import { LinkItems } from './LinkItems';
 import { NavItem } from './NavItem';
-import { SidebarProps } from '../../types/props/Layout';
 
 export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
     <Box
       transition="3s ease"
-      bg={'#001948'}
+      bg={useColorModeValue('#001948', '#252525')}
       color={"#fff"}
-      borderRight="1px"
-      borderRightColor={useColorModeValue('gray.200', 'gray.700')}
+      borderRightWidth="1px"
+      borderRightColor={useColorModeValue('#fff', '#303030')}
       w={{ base: 'full', md: 60 }}
       pos="fixed"
       h="full"

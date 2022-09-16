@@ -1,7 +1,7 @@
 import { Flex, useColorModeValue, Text, Box, IconButton, HStack, Menu, MenuButton, Avatar, VStack, MenuList, MenuItem, MenuDivider } from "@chakra-ui/react";
 import { FiMenu, FiBell, FiChevronDown } from "react-icons/fi";
-import { MobileProps } from "../../types/props/Layout";
-import { ColorModeSwitcher } from "../ColorModeSwitcher";
+import { MobileProps } from "../../types/props/layout";
+import { ColorModeSwitcher } from "../color-mode-switcher/ColorModeSwitcher";
 
 export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   return (
@@ -11,10 +11,9 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       height="20"
       alignItems="center"
       // bg={useColorModeValue('white', 'gray.900')}
-      bg={'#001948'}
+      borderRadius={'0 0 4 4'}
+      bg={useColorModeValue('#001948', '#252525')}
       color={"#fff"}
-      borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
       justifyContent={{ base: 'space-between', md: 'flex-end' }}
       {...rest}>
       <IconButton

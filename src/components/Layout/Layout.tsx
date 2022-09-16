@@ -5,11 +5,11 @@ import {
   DrawerContent,
   useDisclosure,
 } from '@chakra-ui/react';
-import { WithChildren } from '../../types/common';
+import { Wrapper } from '../../types/common';
 import { SidebarContent } from './SidebarContent';
 import { MobileNav } from './MobileNav';
 
-export const Layout = ({ children }: WithChildren) => {
+export const Layout = ({ children }: Wrapper) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
