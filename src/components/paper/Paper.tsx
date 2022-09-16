@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, SystemStyleObject } from '@chakra-ui/react';
 import { PaperProps } from '../../types/common';
 
-const PAPER_STYLE: SystemStyleObject = {
+export const DEFAULT_PAPER_STYLE: SystemStyleObject = {
   border: '1px solid rgb(0, 0, 0, 0.05)',
   borderRadius: 5,
   minHeight: '20vh',
@@ -12,7 +12,7 @@ const PAPER_STYLE: SystemStyleObject = {
 }
 
 export const Paper = ({ children, ...rest }: PaperProps) => (
-  <Box sx={PAPER_STYLE} {...rest}>
+  <Box sx={DEFAULT_PAPER_STYLE} {...rest}>
     {children}
   </Box>
 );
