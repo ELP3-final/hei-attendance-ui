@@ -29,7 +29,7 @@ export const EventAction = () => (
         </Box>
       </Link>
 
-      <Link to="/dashboard/event/eventList" style={{ width: '100%', textDecoration: 'none' }} as={NavLink}>
+      <Link to="/dashboard/event/list" style={{ width: '100%', textDecoration: 'none' }} as={NavLink}>
         <Box
           sx={ACTION_BOX_STYLE}
           bg={HEI_COLOR.YELLOW}

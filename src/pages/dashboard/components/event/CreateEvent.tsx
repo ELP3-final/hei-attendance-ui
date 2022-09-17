@@ -17,6 +17,7 @@ export const CreateEvent = () => {
   const onSubmit = (data: any) => {
     setLoading(true);
     setTimeout(() => setLoading(false), 4000);
+    console.log(data);
   }
 
   return (
