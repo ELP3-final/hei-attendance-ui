@@ -1,9 +1,10 @@
 import { Link, Flex, Icon } from '@chakra-ui/react';
 import { NavItemProps } from '../../types/props/layout';
+import { Link as NavLink } from 'react-router-dom';
 
-export const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+export const NavItem = ({ icon, to, children, ...rest }: NavItemProps) => {
   return (
-    <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }} as={NavLink} to={to}>
       <Flex
         align="center"
         p="4"

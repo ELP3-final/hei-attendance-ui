@@ -7,7 +7,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Auth } from './pages/auth';
 import { Overview } from './pages/dashboard/components/overview';
 import { Dashboard } from './pages/dashboard';
-import { CreateEvent } from './pages/dashboard/components/event';
+import { CreateEvent, EventAction } from './pages/dashboard/components/event';
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -18,7 +18,8 @@ export const App = () => (
       <Route path="/dashboard" element={<Dashboard />}>
         <Route index element={<Navigate to="/dashboard/overview" />} />
         <Route path="/dashboard/overview" element={<Overview />} />
-        <Route path="/dashboard/event" element={<CreateEvent />} />
+        <Route path="/dashboard/event" element={<EventAction />} />
+        <Route path="/dashboard/create-event" element={<CreateEvent />} />
 
         {/* no match route will be redirected to the dashboard */}
         <Route path="*" element={<Navigate to="/dashboard/overview" />} />

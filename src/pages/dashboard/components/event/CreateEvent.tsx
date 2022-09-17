@@ -4,9 +4,11 @@ import { Paper } from '../../../../components';
 import { FaHourglassEnd, FaHourglassStart, FaKey, FaLocationArrow, FaUser } from 'react-icons/fa';
 import { HEI_COLOR } from '../../../../utils/constant';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const CreateEvent = () => {
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors, isValid } } = useForm({
     mode: 'onChange'
   });
@@ -110,7 +112,7 @@ export const CreateEvent = () => {
           onClick={handleSubmit(onSubmit)}
           isLoading={loading}
         >Enregistrer</Button>
-        <Button bg="red.500">Annuler</Button>
+        <Button bg="red.500" onClick={() => navigate('/dashboard/event')}>Annuler</Button>
       </HStack>
     </Paper>
   );

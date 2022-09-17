@@ -1,6 +1,7 @@
 import { HStack, Icon, Button, Divider, useColorModeValue } from '@chakra-ui/react';
 import { FaPlusCircle, FaVoicemail } from 'react-icons/fa'
 import { FiLayout } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import { Paper, DEFAULT_PAPER_STYLE } from '../../../../components';
 import { HEI_COLOR } from '../../../../utils/constant';
 
@@ -9,7 +10,7 @@ export const EventAction = () => (
     <HStack divider={<Divider orientation='vertical' />}>
       <Icon as={FiLayout} fontSize={'7xl'} bg={'blackAlpha.100'} />
 
-      <Button leftIcon={<FaPlusCircle />} colorScheme={'blackAlpha'} variant='solid'>
+      <Button leftIcon={<FaPlusCircle />} colorScheme={'blackAlpha'} variant='solid' as={Link} to="/dashboard/create-event">
         Créer un nouvel évènement
       </Button>
 
