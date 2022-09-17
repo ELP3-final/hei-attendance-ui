@@ -1,10 +1,10 @@
 import React from 'react';
-import { GroupList } from './GroupList';
+import { EventAction } from './EventAction';
 import { RecentActivity } from './RecentActivity';
 
 export const Overview = () => (
   <>
     <RecentActivity />
-    <GroupList />
+    <EventAction />
   </>
 );
