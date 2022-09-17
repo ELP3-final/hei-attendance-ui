@@ -1,4 +1,4 @@
 import React from 'react';
+import { Login } from './components/Login';
 
-// (integrate): the login page
-export const Auth = () => <h1>Hello world</h1>;
+export const Auth = () => <Login />
