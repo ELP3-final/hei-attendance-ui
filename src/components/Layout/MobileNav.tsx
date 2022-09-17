@@ -1,9 +1,12 @@
-import { Flex, useColorModeValue, Text, Box, IconButton, HStack, Menu, MenuButton, Avatar, VStack, MenuList, MenuItem, MenuDivider } from "@chakra-ui/react";
-import { FiMenu, FiBell, FiChevronDown } from "react-icons/fi";
+import { Flex, useColorModeValue, Text, Box, IconButton, HStack, Menu, MenuButton, Avatar, VStack, MenuList, MenuItem } from "@chakra-ui/react";
+import { FiMenu, FiChevronDown } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 import { MobileProps } from "../../types/props/layout";
-import { ColorModeSwitcher } from "../color-mode-switcher/ColorModeSwitcher";
+import { HEI_COLOR } from "../../utils/constant";
 
 export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+  const navigate = useNavigate();
+
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -12,7 +15,7 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       alignItems="center"
       // bg={useColorModeValue('white', 'gray.900')}
       borderRadius={'0 0 4 4'}
-      bg={useColorModeValue('#001948', '#252525')}
+      bg={useColorModeValue(HEI_COLOR.BLUE, '#252525')}
       color={"#fff"}
       justifyContent={{ base: 'space-between', md: 'flex-end' }}
       {...rest}>
@@ -33,12 +36,6 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       </Text>
 
       <HStack spacing={{ base: '0', md: '6' }}>
-        <IconButton
-          size="lg"
-          variant="ghost"
-          aria-label="open menu"
-          icon={<FiBell />}
-        />
         <Flex alignItems={'center'}>
           <Menu>
             <MenuButton
@@ -57,7 +54,7 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2">
-                  <Text fontSize="sm">Justina Clark</Text>
+                  <Text fontSize="sm">Yume Saiko</Text>
                   <Text fontSize="xs" color="gray.600">
                     Admin
                   </Text>
@@ -67,15 +64,10 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                 </Box>
               </HStack>
             </MenuButton>
-            <ColorModeSwitcher />
             <MenuList
               bg={useColorModeValue('white', 'gray.900')}
               borderColor={useColorModeValue('gray.200', 'gray.700')}>
-              <MenuItem>Profile</MenuItem>
-              <MenuItem>Settings</MenuItem>
-              <MenuItem>Billing</MenuItem>
-              <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem onClick={() => navigate('/auth')}>Se déconnecter</MenuItem>
             </MenuList>
           </Menu>
         </Flex>
